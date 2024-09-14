@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <title>ホームページ</title>
+</head>
+<body>
+    <h1>学習管理アプリへようこそ！</h1>
+    <p>現在のコイン: {{ coin }}</p>
+    <p>現在の経験値: {{ exp }}</p>
+
+    <form method="post">
+        <label for="hours">勉強時間を入力してください（時間）:</label>
+        <input type="number" id="hours" name="hours" min="0">
+        <br>
+        <label for="minutes">勉強時間を入力してください（分）:</label>
+        <input type="number" id="minutes" name="minutes" min="0" max="59">
+        <br>
+        <button type="submit">送信</button>
+    </form>
+
+    <a href="{{ url_for('gacha') }}"><button>ガチャ画面へ</button></a>
+</body>
+</html>

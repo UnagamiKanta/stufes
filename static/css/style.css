@@ -1,0 +1,21 @@
+.headerclass{
+    display: flex;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* 垂直方向に中央揃えにする場合 */
+    padding-right: 20px; /* 任意で右に余白を追加 */
+}
+
+.home{
+    text-align: right;
+}
+
+
+header{
+    background-color: #ff9100;
+    padding: 10px;
+}
+
+body{
+    background: linear-gradient(#000000, #080074);
+}

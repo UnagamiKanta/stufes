@@ -1,0 +1,20 @@
+.character-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; 
+}
+
+.character-image {
+    max-width: 300px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+}
+
+.congratulations-message {
+    font-size: 2em;
+    font-weight: bold;
+    color: #fbe8e8;
+    text-shadow: 2px 2px #000000;
+}

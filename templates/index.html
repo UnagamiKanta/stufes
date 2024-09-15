@@ -32,6 +32,9 @@
             </div>
         </div>
     </div>
+    <div class="gacha-img">
+        <img img src="{{ url_for('static', filename='images/gacha.png') }}" alt="money" class="status-money" height="400px">
+    </div>
     <div class="inputform">
         <h1>勉強時間を入力してください</h1>
         <form method="post">
@@ -43,12 +46,9 @@
             </div>
             <button class="exchange-button" type="submit">コイン獲得!</button>
         </form>
-        <div class="gacha">
-            <a href="/gacha" class="gacha-button">
-                <span>ガチャを引く</span>
-                <img src="{{ url_for('static', filename='images/gacha.png') }}" alt="ガチャ" class="gacha-icon" height="40px">
-            </a>
-        </div>
+        <a href="/gacha" class="gacha-button">
+            <span>ガチャを引く</span>
+        </a>
     </div>
     
 

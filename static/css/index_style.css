@@ -30,11 +30,17 @@
     font-size: 30px;
 }
 
+.gacha-img{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 .inputform {
+    margin-top: 36px;
     display: flex;
     flex-direction: column;
     align-items: center; /* 横方向の中央揃え */
-    justify-content: center; /* 縦方向の中央揃え */
     height: 100vh; /* ビューポート全体の高さを使用して中央揃え */
 }
 
@@ -67,6 +73,7 @@
     font-size: 1em;
     border-radius: 5px;
     width: 410px;
+    font-weight: bold;
 }
 
 .exchange-button:hover {
@@ -79,12 +86,20 @@
 }
 
 .gacha-button {
-    margin-top: 10px;
-    background-color: #ff9100;
-    color: #fff;
-    padding: 10px 30px;
-    text-decoration: none;
-    font-size: 1em;
-    border-radius: 5px;
-    width: 410px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 410px; /* ボタンの幅を調整 */
+    height: 50px; /* ボタンの高さを調整 */
+    background-color: #ff9100; /* 好きな色に変更 */
+    border: none; /* 枠線を消す */
+    border-radius: 5px; /* ボタンを角丸にする場合 */
+    text-decoration: none; /* アンカー要素の下線を消す */
+}
+
+.gacha-button span {
+    font-size: 16px; /* テキストサイズ */
+    color: white; /* テキストの色 */
+    font-weight: bold;
 }

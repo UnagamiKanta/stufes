@@ -1,5 +1,27 @@
-{% extends "layout.html" %}
-
-{% block content %}
-
-{% endblock %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css"> -->
+    <title>キャラクター獲得</title>
+</head>
+<header>
+    <div class="headerclass">
+        <div class="home">
+            <a href="">
+                <img src="{{ url_for('static', filename='images/home_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png') }}" alt="スタフェス" class="logo" height="40px">
+            </a>
+        </div>
+    </div>
+</header>
+<body>
+    <p>ガチャ結果: {{ result }}</p>
+    <img src="{{ url_for('static', filename='images/' + image_filename) }}" alt="{{ result }}">
+    <br>
+    <a href="{{ url_for('home') }}"><button>ホームに戻る</button></a>
+</body>
+</html>

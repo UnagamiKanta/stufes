@@ -1,0 +1,90 @@
+.div-wrapper {
+    display: flex;
+    justify-content: flex-end; /* 右揃え */
+}
+
+
+.status{
+    padding: 20px;
+}
+
+.status-money{
+    display: flex;   
+}
+
+.status-money span{
+    font-size: 30px;
+    color:white;
+    font-weight: bold;
+}
+
+.status-exp-unit{
+    font-weight: bold;
+    color:white;
+    font-size: 24px;
+}
+
+.status-exp-num{
+    font-weight: bold;
+    color:white;
+    font-size: 30px;
+}
+
+.inputform {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 横方向の中央揃え */
+    justify-content: center; /* 縦方向の中央揃え */
+    height: 100vh; /* ビューポート全体の高さを使用して中央揃え */
+}
+
+.inputform h1 {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 20px; /* タイトルと入力ボックスの間に余白を追加 */
+}
+
+.inputboxes {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* 入力ボックス間の隙間を調整 */
+}
+
+.inputboxes input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.exchange-button {
+    margin-top: 10px;
+    background-color: #ff9100;
+    color: #fff;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 5px;
+    width: 410px;
+}
+
+.exchange-button:hover {
+    background-color: #ff6f00;
+}
+
+.gacha{
+    background-color: #fff;
+    margin-top: 96px;
+}
+
+.gacha-button {
+    margin-top: 10px;
+    background-color: #ff9100;
+    color: #fff;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 5px;
+    width: 410px;
+}

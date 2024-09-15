@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index_style.css') }}">
     <title>スタフェス</title>
 </head>
 
@@ -19,26 +20,37 @@
 </header>
 <body>
 
-    <!-- currentCoinとexpを表示 -->
-    <p>コインの枚数: <span id="currentCoin"></span></p>
-    <p>経験値: <span id="exp"></span></p>
+    <div class="div-wrapper">
+        <div class="status">
+            <div class="status-money">
+                <img src="{{ url_for('static', filename='images/paid_24dp_FFF_FILL0_wght400_GRAD0_opsz24.png') }}" alt="money" class="status-money" height="40px">
+                <span>:{{ coin }}</span>
+            </div>
+            <div class="status-exp">
+                <span class="status-exp-unit">EXP:</span>
+                <span class="status-exp-num">{{ exp }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="inputform">
+        <h1>勉強時間を入力してください</h1>
+        <form method="post">
+            <!-- <label for="hours">勉強時間を入力してください（時間）:</label> -->
+            <div class="inputboxes">
+                <input type="number" id="hours" name="hours" min="0" placeholder="時間">
+                <!-- <label for="minutes">勉強時間を入力してください（分）:</label> -->
+                <input type="number" id="minutes" name="minutes" min="0" max="59" placeholder="分">
+            </div>
+            <button class="exchange-button" type="submit">コイン獲得!</button>
+        </form>
+        <div class="gacha">
+            <a href="/gacha" class="gacha-button">
+                <span>ガチャを引く</span>
+                <img src="{{ url_for('static', filename='images/gacha.png') }}" alt="ガチャ" class="gacha-icon" height="40px">
+            </a>
+        </div>
+    </div>
+    
 
-    <form action="/update" method="POST">
-        <label for="study_time">勉強時間 (自然数)</label>
-        <input type="number" id="study_time" name="study_time" required min="1" />
-
-        <button type="submit">変換</button>
-    </form>
-
-    <script>
-        // ページロード時にAPIからデータを取得して表示
-        fetch('/api/data')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('currentCoin').textContent = data.currentCoin;
-                document.getElementById('exp').textContent = data.exp;
-            })
-            .catch(error => console.error('Error:', error));
-    </script>
 </body>
 </html>

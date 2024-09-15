@@ -1,23 +1,59 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-    <title>ホームページ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スタフェス</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index_style.css') }}">
 </head>
+
 <body>
-    <h1>学習管理アプリへようこそ！</h1>
-    <p>現在のコイン: {{ coin }}</p>
-    <p>現在の経験値: {{ exp }}</p>
+<header>
+    <div class="headerclass">
+        <div class="home">
+            <a href="">
+                <img src="{{ url_for('static', filename='images/home_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png') }}" alt="スタフェス" class="logo" height="40px">
+            </a>
+        </div>
+    </div>
+</header>
 
+<div class="div-wrapper">
+    <div class="status">
+        <div class="status-money">
+            <img src="{{ url_for('static', filename='images/paid_24dp_FFF_FILL0_wght400_GRAD0_opsz24.png') }}" alt="money" class="status-money" height="40px">
+            <span>:{{ coin }}</span>
+        </div>
+        <div class="status-exp">
+            <span class="status-exp-unit">EXP:</span>
+            <span class="status-exp-num">{{ exp }}</span>
+        </div>
+    </div>
+</div>
+
+<div class="inputform">
+    <h1>勉強時間を入力してください</h1>
     <form method="post">
-        <label for="hours">勉強時間を入力してください（時間）:</label>
-        <input type="number" id="hours" name="hours" min="0">
-        <br>
-        <label for="minutes">勉強時間を入力してください（分）:</label>
-        <input type="number" id="minutes" name="minutes" min="0" max="59">
-        <br>
-        <button type="submit">送信</button>
+        <div class="inputboxes">
+            <input type="number" id="hours" name="hours" min="0" placeholder="時間">
+            <input type="number" id="minutes" name="minutes" min="0" max="59" placeholder="分">
+        </div>
+        <button class="exchange-button" type="submit" name="study_submit">コイン獲得!</button>
     </form>
+    <div class="gacha">
+        {% if message %}
+            <p style="color:red;">{{ message }}</p>
+        {% endif %}
+        <form method="post">
+            <button type="submit" name="gacha_submit" class="gacha-button">
+                <span>ガチャを引く</span>
+                <img src="{{ url_for('static', filename='images/gacha.png') }}" alt="ガチャ" class="gacha-icon" height="40px">
+            </button>
+        </form>
+    </div>
+</div>
 
-    <a href="{{ url_for('gacha') }}"><button>ガチャ画面へ</button></a>
 </body>
 </html>

@@ -1,5 +1,17 @@
-{% extends "layout.html" %}
-
-{% block content %}
-
-{% endblock %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ガチャ結果</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- 必要に応じて追加のCSSファイルを読み込んでください -->
+</head>
+<body>
+    <h1>ガチャ結果</h1>
+    <p>ガチャ結果: {{ result }}</p>
+    <img src="{{ url_for('static', filename='images/' + image_filename) }}" alt="{{ result }}">
+    <br>
+    <a href="{{ url_for('home') }}"><button>ホームに戻る</button></a>
+</body>
+</html>
